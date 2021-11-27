@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:greatapp/misc/color.dart';
 import 'package:greatapp/widgets/app_large_text.dart';
 import 'package:greatapp/widgets/app_text.dart';
+import 'package:greatapp/widgets/responsive_button.dart';
 
 class HomePages extends StatefulWidget {
   const HomePages({Key? key}) : super(key: key);
@@ -39,6 +40,7 @@ class _HomePagesState extends State<HomePages> {
               child: Container(
                 margin: EdgeInsets.only(top: 150, left: 20, right: 20),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -60,9 +62,27 @@ class _HomePagesState extends State<HomePages> {
                             color: AppsColor.textColor2,
                             size: 14,
                           ),
-                        )
+                        ),
+                        SizedBox(
+                          height: 50,
+                        ),
+                        ResposiveButton()
                       ],
-                    )
+                    ),
+
+                    /// Widget Navigasi SLider
+                    Column(
+                      children: List.generate(3, (index) {
+                        return Container(
+                          width: 8,
+                          height: 25,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: AppsColor.mainColor,
+                          ),
+                        );
+                      }),
+                    ),
                   ],
                 ),
               ),
