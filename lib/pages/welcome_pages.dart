@@ -4,14 +4,14 @@ import 'package:greatapp/widgets/app_large_text.dart';
 import 'package:greatapp/widgets/app_text.dart';
 import 'package:greatapp/widgets/responsive_button.dart';
 
-class HomePages extends StatefulWidget {
-  const HomePages({Key? key}) : super(key: key);
+class WelcomePages extends StatefulWidget {
+  const WelcomePages({Key? key}) : super(key: key);
 
   @override
-  _HomePagesState createState() => _HomePagesState();
+  _WelcomePagesState createState() => _WelcomePagesState();
 }
 
-class _HomePagesState extends State<HomePages> {
+class _WelcomePagesState extends State<WelcomePages> {
   List images = [
     "humans-vector-01.png",
     "humans-vector-02.png",
@@ -21,7 +21,6 @@ class _HomePagesState extends State<HomePages> {
   Widget build(BuildContext context) {
     return Scaffold(
       // Page View Untuk Mmebuat COurousel Pages
-
       body: PageView.builder(
           scrollDirection: Axis.vertical,
           itemCount: images.length,
@@ -72,13 +71,16 @@ class _HomePagesState extends State<HomePages> {
 
                     /// Widget Navigasi SLider
                     Column(
-                      children: List.generate(3, (index) {
+                      children: List.generate(3, (indexDots) {
                         return Container(
+                          margin: const EdgeInsets.only(bottom: 7),
                           width: 8,
-                          height: 25,
+                          height: index == indexDots ? 25 : 8,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
-                            color: AppsColor.mainColor,
+                            color: index == indexDots
+                                ? AppsColor.mainColor
+                                : AppsColor.mainColor.withOpacity(0.5),
                           ),
                         );
                       }),

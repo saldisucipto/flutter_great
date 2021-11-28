@@ -48,7 +48,11 @@ flutter:
     - assets/images/humans-vector-02.png
     - assets/images/humans-vector-03.png
     - assets/images/buttons-arrows.png
-
+    - assets/images/mountains01.jpg
+    - assets/images/porters.jpg
+    - assets/images/safety.png
+    - assets/images/starterpack.jpg
+    - assets/images/eo.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
