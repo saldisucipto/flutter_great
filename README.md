@@ -1,6 +1,6 @@
 # myapp
 
-A new Flutter project.
+Futter Tutorial With Ericko Dermawan
 
 ## Getting Started
 
