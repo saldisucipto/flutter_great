@@ -20,7 +20,6 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       number;
     });
-    print(number);
   }
 
   int number = 0;
@@ -91,6 +90,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
                 TextButton(
+                  // Menggunkan Anonymous Widget
                   onPressed: () {
                     setState(() {
                       number = 0;
