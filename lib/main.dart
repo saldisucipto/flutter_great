@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MaterialApp(
+    home: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -10,40 +12,126 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Kita menggunkan null safety dan menggunkan const
+    var ukuran = MediaQuery.of(context).size;
     return MaterialApp(
       // Menghilangkan banner debug
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         // ini adalah widget tampilan yang akan digunakan
         appBar: AppBar(
-          title: const Text("Aplikasi Pertama"),
+          title: const Text("Aplikasi Pertamaas"),
         ),
         body: Center(
-          // ini widget untuk menempatkan semuanya ditengah
-          // body adalah parameter dari scaffold widget untuk memberikan konten pada body aplikasi kita
-          child: Container(
-            color: Colors.blue,
-            width: 150,
-            height: 50,
-            child: const Text(
-              "This is A Hello World Application lorem ipsum dolor sit ammet",
-              // Mengatur batas maksimal text
-              maxLines: 2,
-              // ,mepunyai properties overflow juga
-              overflow: TextOverflow.ellipsis,
-              softWrap: false,
-              // mengatur align text
-              textAlign: TextAlign.center,
-              // Styling Text
-              style: TextStyle(
-                // merubah warna text
-                color: Colors.white,
-                // Merubah ketebalan text
-                fontWeight: FontWeight.bold,
-                // Merubah ukuran Text
-                fontSize: 20,
+          child: Column(
+            // Column akan membuat sebuah penempatan list secara menurun atau horizontal
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            // Untuk Mengatur Content pada Kolom dimulai dengan start
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.blueAccent,
+                ),
+                width: 100,
+                height: 50,
+                child: const Center(
+                  child: Text(
+                    "Box 1",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
               ),
-            ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.blueAccent,
+                ),
+                width: 100,
+                height: 50,
+                child: const Center(
+                  child: Text(
+                    "Box 2",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.blueAccent,
+                ),
+                width: 100,
+                height: 50,
+                child: const Center(
+                  child: Text(
+                    "Box 3",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+              Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    // color: Colors.blueAccent,
+                  ),
+                  height: 50,
+                  width: ukuran.width,
+                  child: Row(
+                    // Mangatur Space Pada Element
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.blueAccent,
+                        ),
+                        width: 100,
+                        height: 50,
+                        child: const Center(
+                          child: Text(
+                            "Box 4",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.blueAccent,
+                        ),
+                        width: 100,
+                        height: 50,
+                        child: const Center(
+                          child: Text(
+                            "Box 5",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.blueAccent,
+                        ),
+                        width: 100,
+                        height: 50,
+                        child: const Center(
+                          child: Text(
+                            "Box 6",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
+            ],
           ),
         ),
       ),
