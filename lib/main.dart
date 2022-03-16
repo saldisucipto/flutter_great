@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,109 +16,32 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    /**
-     * Stack Widget
-     * Adalah sebuah Widget untuk menyusun content pad screen secara bertumpuk 
-     */
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Stack Widgets"),
-      ),
-      body: Stack(
-        children: [
-          // Background
-          Column(
-            children: [
-              Flexible(
-                flex: 1,
-                child: Row(
-                  children: [
-                    Flexible(flex: 1, child: Container(color: Colors.white)),
-                    Flexible(flex: 1, child: Container(color: Colors.black54)),
-                  ],
-                ),
-              ),
-              Flexible(
-                flex: 1,
-                child: Row(
-                  children: [
-                    Flexible(flex: 1, child: Container(color: Colors.black54)),
-                    Flexible(flex: 1, child: Container(color: Colors.white)),
-                  ],
-                ),
-              ),
-            ],
+      body: Center(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          // Network Images
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            width: 300,
+            height: 300,
+            color: Colors.grey,
+            child: const Image(
+              fit: BoxFit.cover,
+              image: NetworkImage(
+                  "https://images.unsplash.com/photo-1647185255958-701651f45c4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
+            ),
           ),
-          ListView(
-            children: [
-              Container(
-                margin: const EdgeInsets.all(10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    Text(
-                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    Text(
-                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    Text(
-                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    Text(
-                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    Text(
-                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    Text(
-                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    Text(
-                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    Text(
-                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
-                      style: TextStyle(fontSize: 30),
-                    ),
-                  ],
-                ),
-              )
-            ],
+          // Assets Images / Local Images
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            width: 300,
+            height: 300,
+            color: Colors.grey,
+            child: const Image(
+                fit: BoxFit.cover,
+                image: AssetImage("assets/images/images1.jpg")),
           ),
-          // Listview dengan Text
-          Align(
-            alignment: const Alignment(0.9, 0.5),
-            child: TextButton(
-                onPressed: () {},
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.blueAccent,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  width: 100,
-                  height: 40,
-                  child: const Center(
-                    child: Text(
-                      "BUTTON ME",
-                      style: TextStyle(color: Colors.white, fontSize: 12),
-                    ),
-                  ),
-                )),
-          )
-          // button di tengah bawah
-        ],
+        ]),
       ),
     );
   }
