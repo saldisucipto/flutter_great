@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,42 +16,31 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Widget> datas = [];
-  int counter = 1;
+  Random random = Random();
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Belajar List View"),
+        title: const Text("Animated Widgets"),
       ),
-      body: ListView(children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextButton(
-              onPressed: () {
-                setState(() {
-                  datas.add(Text("Data Ke " + counter.toString()));
-                  counter++;
-                });
-              },
-              child: const Text("Add Me+"),
+      body: Center(
+        child: GestureDetector(
+          onTap: () {
+            setState(() {});
+          },
+          child: AnimatedContainer(
+            duration: Duration(seconds: 1),
+            color: Color.fromARGB(
+              255,
+              random.nextInt(256),
+              random.nextInt(256),
+              random.nextInt(256),
             ),
-            TextButton(
-              onPressed: () {
-                setState(() {
-                  datas.removeLast();
-                });
-              },
-              child: const Text("Delete Me-"),
-            ),
-          ],
+            width: 50.0 + random.nextInt(101),
+            height: 50.0 + random.nextInt(101),
+          ),
         ),
-        Column(
-          children: datas,
-        )
-      ]),
+      ),
     );
   }
 }
