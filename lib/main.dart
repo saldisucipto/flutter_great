@@ -16,30 +16,111 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Random random = Random();
   @override
   Widget build(BuildContext context) {
+    /**
+     * Stack Widget
+     * Adalah sebuah Widget untuk menyusun content pad screen secara bertumpuk 
+     */
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Animated Widgets"),
+        title: const Text("Stack Widgets"),
       ),
-      body: Center(
-        child: GestureDetector(
-          onTap: () {
-            setState(() {});
-          },
-          child: AnimatedContainer(
-            duration: Duration(seconds: 1),
-            color: Color.fromARGB(
-              255,
-              random.nextInt(256),
-              random.nextInt(256),
-              random.nextInt(256),
-            ),
-            width: 50.0 + random.nextInt(101),
-            height: 50.0 + random.nextInt(101),
+      body: Stack(
+        children: [
+          // Background
+          Column(
+            children: [
+              Flexible(
+                flex: 1,
+                child: Row(
+                  children: [
+                    Flexible(flex: 1, child: Container(color: Colors.white)),
+                    Flexible(flex: 1, child: Container(color: Colors.black54)),
+                  ],
+                ),
+              ),
+              Flexible(
+                flex: 1,
+                child: Row(
+                  children: [
+                    Flexible(flex: 1, child: Container(color: Colors.black54)),
+                    Flexible(flex: 1, child: Container(color: Colors.white)),
+                  ],
+                ),
+              ),
+            ],
           ),
-        ),
+          ListView(
+            children: [
+              Container(
+                margin: const EdgeInsets.all(10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    Text(
+                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    Text(
+                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    Text(
+                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    Text(
+                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    Text(
+                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    Text(
+                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    Text(
+                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    Text(
+                      "Ini Adalah Text yang ad apada lapisan tengah pada widgtes Stack",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+          // Listview dengan Text
+          Align(
+            alignment: const Alignment(0.9, 0.5),
+            child: TextButton(
+                onPressed: () {},
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blueAccent,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  width: 100,
+                  height: 40,
+                  child: const Center(
+                    child: Text(
+                      "BUTTON ME",
+                      style: TextStyle(color: Colors.white, fontSize: 12),
+                    ),
+                  ),
+                )),
+          )
+          // button di tengah bawah
+        ],
       ),
     );
   }
