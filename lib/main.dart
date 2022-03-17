@@ -6,6 +6,10 @@ void main() {
   ));
 }
 
+// Flexible Widget
+/// Bagaimana kita menysusun kontent pada layar secara flex dan dibagi sesuai dengan ukuran layarnya
+/// Akan dibagi secara menyeluruh sesuai dengan value flex
+
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -17,31 +21,69 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          // Network Images
-          Container(
-            margin: EdgeInsets.only(top: 10),
-            width: 300,
-            height: 300,
-            color: Colors.grey,
-            child: const Image(
-              fit: BoxFit.cover,
-              image: NetworkImage(
-                  "https://images.unsplash.com/photo-1647185255958-701651f45c4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
+      appBar: AppBar(
+        title: const Text("The Flexible Widgets"),
+      ),
+      body: Column(
+        children: [
+          // Bagian Paling Atas
+          Flexible(
+            flex: 1, // Mengambil 1 Bagian Pada Screen
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Flexible(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(5),
+                    child: const Center(
+                      child: Text("Container 1"),
+                    ),
+                    color: Colors.greenAccent,
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(5),
+                    child: const Center(
+                      child: Text("Container 1"),
+                    ),
+                    color: Colors.blueGrey,
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(5),
+                    child: const Center(
+                      child: Text("Container 1"),
+                    ),
+                    color: Colors.amber,
+                  ),
+                ),
+              ],
             ),
           ),
-          // Assets Images / Local Images
-          Container(
-            margin: EdgeInsets.only(top: 10),
-            width: 300,
-            height: 300,
-            color: Colors.grey,
-            child: const Image(
-                fit: BoxFit.cover,
-                image: AssetImage("assets/images/images1.jpg")),
+          Flexible(
+            flex: 2, // Mengambil 2 Bagian Pada Screen
+            child: Container(
+              child: const Center(
+                child: Text("Container 2"),
+              ),
+              color: Colors.amberAccent,
+            ),
           ),
-        ]),
+          Flexible(
+            flex: 1, // Mengambil 1 Bagian Pada Screen
+            child: Container(
+              child: const Center(
+                child: Text("Container 3"),
+              ),
+              color: Colors.blue,
+            ),
+          ),
+        ],
       ),
     );
   }
