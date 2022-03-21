@@ -11,7 +11,7 @@ class MainPages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("The Main Pages"),
+        title: const Text("Catalog Widgtes"),
         actions: [
           IconButton(
             onPressed: () {},
@@ -43,12 +43,12 @@ class MainPages extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: GridView.count(
+        crossAxisCount: 3,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
+        padding: const EdgeInsets.all(10),
         children: const [
-          Center(
-            child: Text("THIS IS MAIN PAGES"),
-          ),
           Navigasi(
             classTujuan: SecondPages(),
             namaNavigasi: "Second Pages",

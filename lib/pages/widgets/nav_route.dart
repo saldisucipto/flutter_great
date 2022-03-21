@@ -22,7 +22,11 @@ class Navigasi extends StatelessWidget {
           ),
         );
       },
-      child: Text(namaNavigasi),
+      child: Text(
+        namaNavigasi,
+        textAlign: TextAlign.center,
+        style: const TextStyle(fontSize: 12),
+      ),
     );
   }
 }
