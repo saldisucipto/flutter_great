@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/pages/second_pages.dart';
 import 'package:myapp/pages/widgets/card_widgets.dart';
+import 'package:myapp/pages/widgets/nav_route.dart';
 
 class MainPages extends StatelessWidget {
   const MainPages({Key? key}) : super(key: key);
@@ -33,42 +34,28 @@ class MainPages extends StatelessWidget {
               begin: FractionalOffset.bottomRight,
               end: FractionalOffset.topLeft,
             ),
-            image: DecorationImage(
-              image: AssetImage("assets/patern/pattern.png"),
-              fit: BoxFit.contain,
-              repeat: ImageRepeat.repeat,
-            ),
+            // image: DecorationImage(
+            //   image: AssetImage("assets/patern/pattern.png"),
+            //   fit: BoxFit.contain,
+            //   repeat: ImageRepeat.repeat,
+            // ),
           ),
         ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Center(
+        children: const [
+          Center(
             child: Text("THIS IS MAIN PAGES"),
           ),
-          ElevatedButton(
-            onPressed: () {
-              // Push Navigasi Route yang Tidak Masih Memungkinkan Kmebali ke Pages Sebelumnya
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const SecondPages(),
-                ),
-              );
-            },
-            child: const Text("Go To Seconda Pages"),
+          Navigasi(
+            classTujuan: SecondPages(),
+            namaNavigasi: "Second Pages",
           ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const CardWidgets(),
-                ),
-              );
-            },
-            child: const Text("Card Widgets"),
-          ),
+          Navigasi(
+            classTujuan: CardWidgets(),
+            namaNavigasi: "Card Widgtes",
+          )
         ],
       ),
     );
