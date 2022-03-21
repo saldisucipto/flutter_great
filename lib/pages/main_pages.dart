@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/pages/second_pages.dart';
 import 'package:myapp/pages/widgets/card_widgets.dart';
 import 'package:myapp/pages/widgets/nav_route.dart';
+import 'package:myapp/pages/widgets/responseive_widgtes.dart';
 import 'package:myapp/pages/widgets/textfiels_widgtes.dart';
 
 class MainPages extends StatelessWidget {
@@ -60,6 +61,10 @@ class MainPages extends StatelessWidget {
           Navigasi(
             classTujuan: FormWidgets(),
             namaNavigasi: "Form Widgtes",
+          ),
+          Navigasi(
+            classTujuan: ResponisveWidgets(),
+            namaNavigasi: "Media Query",
           ),
         ],
       ),
