@@ -33,7 +33,7 @@ class MainPages extends StatelessWidget {
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.blue, Colors.cyanAccent],
+              colors: [Colors.blue, Colors.cyan],
               begin: FractionalOffset.bottomRight,
               end: FractionalOffset.topLeft,
             ),
