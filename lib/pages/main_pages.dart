@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/pages/second_pages.dart';
 import 'package:myapp/pages/widgets/button_gradasi.dart';
 import 'package:myapp/pages/widgets/card_widgets.dart';
+import 'package:myapp/pages/widgets/custom-appbar.dart';
 import 'package:myapp/pages/widgets/hero_animation.dart';
 import 'package:myapp/pages/widgets/nav_route.dart';
 import 'package:myapp/pages/widgets/responseive_widgtes.dart';
@@ -75,6 +76,10 @@ class MainPages extends StatelessWidget {
           Navigasi(
             classTujuan: HeroAnimations(),
             namaNavigasi: "ClipRRect Widgets",
+          ),
+          Navigasi(
+            classTujuan: CustomAppBar(),
+            namaNavigasi: "Custom AppBar",
           )
         ],
       ),
