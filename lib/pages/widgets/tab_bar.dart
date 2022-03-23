@@ -11,6 +11,10 @@ class TabAppBar extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Contoh App Bar"),
           bottom: const TabBar(
+            indicator: BoxDecoration(
+                color: Colors.cyan,
+                border:
+                    Border(left: BorderSide(color: Colors.white, width: 2))),
             tabs: [
               Tab(
                 icon: Icon(Icons.android_outlined),
