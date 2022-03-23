@@ -6,6 +6,7 @@ import 'package:myapp/pages/widgets/custom-appbar.dart';
 import 'package:myapp/pages/widgets/hero_animation.dart';
 import 'package:myapp/pages/widgets/nav_route.dart';
 import 'package:myapp/pages/widgets/responseive_widgtes.dart';
+import 'package:myapp/pages/widgets/tab_bar.dart';
 import 'package:myapp/pages/widgets/textfiels_widgtes.dart';
 
 class MainPages extends StatelessWidget {
@@ -80,6 +81,10 @@ class MainPages extends StatelessWidget {
           Navigasi(
             classTujuan: CustomAppBar(),
             namaNavigasi: "Custom AppBar",
+          ),
+          Navigasi(
+            classTujuan: TabAppBar(),
+            namaNavigasi: "Tab Bar Widgets",
           )
         ],
       ),
