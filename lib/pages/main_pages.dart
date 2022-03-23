@@ -5,6 +5,7 @@ import 'package:myapp/pages/widgets/card_widgets.dart';
 import 'package:myapp/pages/widgets/custom-appbar.dart';
 import 'package:myapp/pages/widgets/hero_animation.dart';
 import 'package:myapp/pages/widgets/nav_route.dart';
+import 'package:myapp/pages/widgets/qr_code.dart';
 import 'package:myapp/pages/widgets/responseive_widgtes.dart';
 import 'package:myapp/pages/widgets/tab_bar.dart';
 import 'package:myapp/pages/widgets/textfiels_widgtes.dart';
@@ -85,6 +86,10 @@ class MainPages extends StatelessWidget {
           Navigasi(
             classTujuan: TabAppBar(),
             namaNavigasi: "Tab Bar Widgets",
+          ),
+          Navigasi(
+            classTujuan: QrCode(),
+            namaNavigasi: "QR Code",
           )
         ],
       ),
