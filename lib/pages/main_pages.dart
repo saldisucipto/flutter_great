@@ -4,6 +4,7 @@ import 'package:myapp/pages/widgets/button_gradasi.dart';
 import 'package:myapp/pages/widgets/button_ketupat.dart';
 import 'package:myapp/pages/widgets/card_widgets.dart';
 import 'package:myapp/pages/widgets/custom-appbar.dart';
+import 'package:myapp/pages/widgets/gradasi_opasity.dart';
 import 'package:myapp/pages/widgets/hero_animation.dart';
 import 'package:myapp/pages/widgets/nav_route.dart';
 import 'package:myapp/pages/widgets/qr_code.dart';
@@ -95,6 +96,10 @@ class MainPages extends StatelessWidget {
           Navigasi(
             classTujuan: ButtonKetupat(),
             namaNavigasi: "Button Ketupat",
+          ),
+          Navigasi(
+            classTujuan: GradasiOpasiti(),
+            namaNavigasi: "Gradasi Opasity",
           )
         ],
       ),
