@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/pages/second_pages.dart';
+import 'package:myapp/pages/widgets/blok_state.dart';
 import 'package:myapp/pages/widgets/button_gradasi.dart';
 import 'package:myapp/pages/widgets/button_ketupat.dart';
 import 'package:myapp/pages/widgets/card_widgets.dart';
@@ -113,8 +114,13 @@ class MainPages extends StatelessWidget {
             namaNavigasi: "Provider State",
           ),
           Navigasi(
-              classTujuan: MultiStatePropider(),
-              namaNavigasi: "Multi Provider State")
+            classTujuan: MultiStatePropider(),
+            namaNavigasi: "Multi Provider State",
+          ),
+          Navigasi(
+            classTujuan: BlokState(),
+            namaNavigasi: "Blok State Management",
+          )
         ],
       ),
     );
