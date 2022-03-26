@@ -6,6 +6,7 @@ import 'package:myapp/pages/widgets/card_widgets.dart';
 import 'package:myapp/pages/widgets/custom-appbar.dart';
 import 'package:myapp/pages/widgets/gradasi_opasity.dart';
 import 'package:myapp/pages/widgets/hero_animation.dart';
+import 'package:myapp/pages/widgets/mainkan_musik.dart';
 import 'package:myapp/pages/widgets/nav_route.dart';
 import 'package:myapp/pages/widgets/qr_code.dart';
 import 'package:myapp/pages/widgets/responseive_widgtes.dart';
@@ -100,6 +101,10 @@ class MainPages extends StatelessWidget {
           Navigasi(
             classTujuan: GradasiOpasiti(),
             namaNavigasi: "Gradasi Opasity",
+          ),
+          Navigasi(
+            classTujuan: MainkanMusik(),
+            namaNavigasi: "Playing Music",
           )
         ],
       ),
