@@ -37,6 +37,8 @@ dependencies:
   qr_flutter: ^4.0.0
   # Audio Players
   audioplayers: ^0.20.1
+  # Provider state
+  provider: ^6.0.2
 
 dev_dependencies:
   flutter_test:

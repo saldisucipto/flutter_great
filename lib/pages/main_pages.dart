@@ -10,6 +10,7 @@ import 'package:myapp/pages/widgets/mainkan_musik.dart';
 import 'package:myapp/pages/widgets/nav_route.dart';
 import 'package:myapp/pages/widgets/qr_code.dart';
 import 'package:myapp/pages/widgets/responseive_widgtes.dart';
+import 'package:myapp/pages/widgets/state_pripeder.dart';
 import 'package:myapp/pages/widgets/tab_bar.dart';
 import 'package:myapp/pages/widgets/textfiels_widgtes.dart';
 
@@ -105,6 +106,10 @@ class MainPages extends StatelessWidget {
           Navigasi(
             classTujuan: MainkanMusik(),
             namaNavigasi: "Playing Music",
+          ),
+          Navigasi(
+            classTujuan: ProPider(),
+            namaNavigasi: "Provider State",
           )
         ],
       ),
