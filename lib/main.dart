@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/providers/great_places.dart';
+import 'package:myapp/screens/add_places_screen.dart';
 import 'package:myapp/screens/places_list_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
               .copyWith(secondary: Colors.amber),
         ),
         home: const PlacListSceen(),
+        routes: {
+          AddPlaceScreen.routeName: (ctx) => const AddPlaceScreen(),
+        },
       ),
     );
   }
