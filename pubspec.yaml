@@ -33,11 +33,6 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  # qrcode lib
-  qr_flutter: ^4.0.0
-  # Audio Players
-  audioplayers: ^0.20.1
-  # Provider state
   provider: ^6.0.2
 
 dev_dependencies:
@@ -62,10 +57,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - assets/images/images1.jpg
-    - assets/images/profile.jpg
-    - assets/patern/pattern.png
+  # assets:
+  #   - assets/images/images1.jpg
+  #   - assets/images/profile.jpg
+  #   - assets/patern/pattern.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -78,10 +73,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: Pacifico
-      fonts:
-        - asset: assets/fonts/Pacifico-Regular.ttf
+  # fonts:
+  #   - family: Pacifico
+  #     fonts:
+  #       - asset: assets/fonts/Pacifico-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
