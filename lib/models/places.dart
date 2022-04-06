@@ -1,4 +1,5 @@
 // libarary handle data type File
+
 import 'dart:io';
 
 class PlaceLocation {
@@ -17,7 +18,7 @@ class Place {
   // Our Field On Class
   final String id;
   final String title;
-  final PlaceLocation location;
+  final PlaceLocation? location;
   final File image;
 
   Place({

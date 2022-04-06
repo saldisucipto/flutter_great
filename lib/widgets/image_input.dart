@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
+import 'package:path/path.dart' as path;
+import 'package:path_provider/path_provider.dart' as syspaths;
 
 class ImageInput extends StatefulWidget {
-  const ImageInput({Key? key}) : super(key: key);
+  final Function onSelectImage;
+  const ImageInput({
+    Key? key,
+    required this.onSelectImage,
+  }) : super(key: key);
 
   @override
   State<ImageInput> createState() => _ImageInputState();
@@ -11,12 +17,47 @@ class ImageInput extends StatefulWidget {
 
 class _ImageInputState extends State<ImageInput> {
   File? _storeImage;
-  Future<void> _takePicture() async {
-    final ImagePicker _picker = ImagePicker();
-    final imageFile = await _picker.pickImage(
+
+  Future pickImage() async {
+    final image = await ImagePicker().pickImage(
       source: ImageSource.camera,
       maxWidth: 600,
     );
+    if (image == null) {
+      return;
+    }
+    // saved image permantely
+    final imagePermanent = await savedImagePermanent(image.path);
+    // final imageTemporary = File(image.path);
+    setState(() {
+      _storeImage = imagePermanent;
+    });
+    // select constructoe
+    widget.onSelectImage(imagePermanent);
+    // print(imagePermanent);
+  }
+
+  // Saved Image On Local Device
+  Future<File> savedImagePermanent(String imagePath) async {
+    final directory = await syspaths.getApplicationDocumentsDirectory();
+    final name = path.basename(imagePath);
+    final image = File('${directory.path}/$name');
+    return File(imagePath).copy(image.path);
+  }
+
+  Future pickImageGallery() async {
+    final image = await ImagePicker()
+        .pickImage(source: ImageSource.gallery, maxWidth: 600);
+    if (image == null) {
+      return;
+    }
+    // final imageTemporary = File(image.path);
+    final imagePermanent = await savedImagePermanent(image.path);
+
+    setState(() {
+      _storeImage = imagePermanent;
+    });
+    widget.onSelectImage(imagePermanent);
   }
 
   @override
@@ -45,10 +86,19 @@ class _ImageInputState extends State<ImageInput> {
           width: 10,
         ),
         Expanded(
-          child: TextButton.icon(
-            onPressed: _takePicture,
-            icon: const Icon(Icons.camera),
-            label: const Text("Take Picture"),
+          child: Column(
+            children: [
+              TextButton.icon(
+                onPressed: pickImage,
+                icon: const Icon(Icons.camera),
+                label: const Text("Take Picture"),
+              ),
+              TextButton.icon(
+                onPressed: pickImageGallery,
+                icon: const Icon(Icons.picture_in_picture_rounded),
+                label: const Text("From Gallery"),
+              ),
+            ],
           ),
         ),
       ],
