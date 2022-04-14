@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:todoapp/services/notification_services.dart';
 import 'package:todoapp/services/theme_services.dart';
 
 class HomePages extends StatefulWidget {
@@ -9,6 +11,15 @@ class HomePages extends StatefulWidget {
 }
 
 class _HomePagesState extends State<HomePages> {
+  var notifyHelper;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    notifyHelper = NotifyHelper();
+    notifyHelper.initializeNotification();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,24 +29,31 @@ class _HomePagesState extends State<HomePages> {
       ),
     );
   }
-}
 
-_appBar() {
-  return AppBar(
-    leading: GestureDetector(
-      onTap: () {
-        TemaServis().switchTheme();
-      },
-      child: const Icon(
-        Icons.nightlight_rounded,
-        size: 20,
+  _appBar() {
+    return AppBar(
+      leading: GestureDetector(
+        onTap: () {
+          TemaServis().switchTheme();
+          notifyHelper.diplayNotifications(
+            title: "Theme Changed",
+            body: Get.isDarkMode
+                ? "Dark Theme Activated"
+                : "Light Theme Activated",
+          );
+          notifyHelper.scheduledNotification();
+        },
+        child: const Icon(
+          Icons.nightlight_rounded,
+          size: 20,
+        ),
       ),
-    ),
-    actions: const [
-      Icon(Icons.person, size: 20),
-      SizedBox(
-        width: 20,
-      )
-    ],
-  );
+      actions: const [
+        Icon(Icons.person, size: 20),
+        SizedBox(
+          width: 20,
+        )
+      ],
+    );
+  }
 }

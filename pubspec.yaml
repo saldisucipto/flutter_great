@@ -37,6 +37,9 @@ dependencies:
   get_storage:
   # get info on devices
   get:
+  # notification package
+  flutter_local_notifications:
+  flutter_native_timezone:
 
 dev_dependencies:
   flutter_test:
