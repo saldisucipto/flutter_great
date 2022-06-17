@@ -16,12 +16,16 @@ class Laptop {
       : this(brand,
             ""); // ini berarti reiderecting ke constructor utama untuk mengisi dengan value pada name constructor
   Laptop.withHarga(String harga) : this("", harga);
+  // redirecting named constructor
+  Laptop.lonovoBrand() : this.withBrand("Lenovo Brand");
 }
 
 void main(List<String> args) {
   var lenovo = Laptop.withBrand("Lenovo");
   var samsung = Laptop.withHarga("5000000");
+  var hp = Laptop.lonovoBrand();
 
   print(lenovo.brand);
   print(samsung.harga);
+  print(hp.brand);
 }
