@@ -14,7 +14,7 @@ class Database {
   }
 
   Database() {
-    print("Create New Database");
+    print("Create New Database Connection");
   }
 }
 
