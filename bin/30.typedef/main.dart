@@ -17,8 +17,18 @@ class Kurang {
 typedef Total = Kurang;
 typedef Minus = Kurang;
 
+// typedef function
+typedef Filter = String Function(String);
+
+void sayHello(String nama, Filter filter) {
+  print("Hallo ${filter(nama)}");
+}
+
 void main(List<String> args) {
   // menggunkan typedef
   var kurang = Total(20, 40); // menggunkan alias typedef
   print(kurang());
+
+  // menggunkan typedef Function
+  sayHello('Saldi', (p0) => p0.toUpperCase());
 }
