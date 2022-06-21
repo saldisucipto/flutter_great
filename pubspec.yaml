@@ -7,7 +7,7 @@ environment:
   sdk: ">=2.17.0 <3.0.0"
 
 # dependencies:
-#   path: ^1.8.0 catatcan belajar : 1:15:17
+#   path: ^1.8.0 catatcan belajar : 3:07
 
 dev_dependencies:
   lints: ^2.0.0
