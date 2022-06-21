@@ -7,13 +7,17 @@ import 'class/repo.dart';
 
 void main(List<String> args) {
   // penggunkan noSuchethod harus dynamic
-  dynamic repo = Repository("produk");
+  var repo = Repository("produk");
 
   repo.id(
       "1"); // walau tidak ada kita bisa memberikan method terserah kita secara dynamic
   repo.nama("Laptop");
-  repo.qunatity(100);
+  repo.quantity(100);
+  repo.location("Indo");
+
+  // dengan seperti ini kita tidak bisa secara liar menambhkan method yang tidak adapada sbtract clas
 
   // Sebenarnya penggunan ini akan liar karena kita bisa membeirkan method apa saja yang akan ditambahkan
   // biasa digunkan pada abstract class
+  // nosuch method juga bisa digunakan pada interfaces
 }
