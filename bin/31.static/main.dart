@@ -12,4 +12,7 @@ void main(List<String> args) {
   // menggunkan static field
   print(Application.name); // tanpa membuat object baru atau pewarisan
   print(Application.author);
+
+  // akses tatic method
+  print(Application.jumlah(30, 40));
 }
