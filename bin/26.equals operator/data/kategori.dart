@@ -19,4 +19,12 @@ class Category {
       return false;
     }
   }
+
+  // mengoverride HasCode
+  @override
+  int get hashCode {
+    var result = id.hashCode;
+    result += namaKat.hashCode;
+    return result;
+  }
 }
