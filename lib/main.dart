@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutudemy/pages/category_pages.dart';
 import 'package:flutudemy/pages/home_pages.dart';
 
 void main(List<String> args) {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePages(),
+      home: const KategoriScreen(),
     );
   }
 }
