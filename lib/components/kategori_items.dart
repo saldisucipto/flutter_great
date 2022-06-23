@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -20,7 +21,10 @@ class KategoriItems extends StatelessWidget {
             end: Alignment.bottomLeft,
           ),
           borderRadius: BorderRadius.circular(16)),
-      child: Text(title),
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.headline1,
+      ),
     );
   }
 }
