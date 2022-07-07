@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutudemy/pages/category_meals_pages.dart';
 import 'package:flutudemy/pages/category_pages.dart';
 
 void main(List<String> args) {
@@ -34,6 +35,10 @@ class MyApp extends StatelessWidget {
             ),
       ),
       home: const KategoriScreen(),
+      routes: {
+        // membuat named routes
+        '/category-meals': (context) => const CategoryMealsScreen(),
+      },
     );
   }
 }

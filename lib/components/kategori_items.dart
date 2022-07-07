@@ -12,15 +12,20 @@ class KategoriItems extends StatelessWidget {
 
   void selectCategory(BuildContext context) {
     // membuat berpindah dari pages ini ke page lain
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) {
-          return CategoryMealsScreen(
-            categoryId: id,
-            categoryTitle: title,
-          );
-        },
-      ),
+    // Navigator.of(context).push(
+    //   MaterialPageRoute(
+    //     builder: (_) {
+    //       return CategoryMealsScreen(
+    //         categoryId: id,
+    //         categoryTitle: title,
+    //       );
+    //     },
+    //   ),
+    // );
+    // menggunkan pushnamed Route dengan menggunakan dan mengirimkan arguments
+    Navigator.of(context).pushNamed(
+      '/category-meals',
+      arguments: {'id': id, 'title': title},
     );
   }
 
