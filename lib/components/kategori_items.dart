@@ -24,7 +24,7 @@ class KategoriItems extends StatelessWidget {
     // );
     // menggunkan pushnamed Route dengan menggunakan dan mengirimkan arguments
     Navigator.of(context).pushNamed(
-      '/category-meals',
+      CategoryMealsScreen.routeName,
       arguments: {'id': id, 'title': title},
     );
   }

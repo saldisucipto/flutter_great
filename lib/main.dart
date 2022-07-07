@@ -34,10 +34,13 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
-      home: const KategoriScreen(),
+      // home: const KategoriScreen(),
+      initialRoute: '/',
       routes: {
+        // mengatur index route
+        '/': (context) => const KategoriScreen(),
         // membuat named routes
-        '/category-meals': (context) => const CategoryMealsScreen(),
+        CategoryMealsScreen.routeName: (context) => const CategoryMealsScreen(),
       },
     );
   }
