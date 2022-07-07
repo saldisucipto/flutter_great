@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutudemy/pages/category_meals_pages.dart';
 import 'package:flutudemy/pages/category_pages.dart';
+import 'package:flutudemy/pages/meal_details_screen.dart';
 
 void main(List<String> args) {
   // main function
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Aplikasi Makanan',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
             .copyWith(secondary: Colors.amber),
@@ -41,6 +43,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const KategoriScreen(),
         // membuat named routes
         CategoryMealsScreen.routeName: (context) => const CategoryMealsScreen(),
+        MealDetaialsScreen.routeName: (context) => const MealDetaialsScreen(),
       },
     );
   }
