@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutudemy/pages/category_meals_pages.dart';
-import 'package:flutudemy/pages/category_pages.dart';
 import 'package:flutudemy/pages/meal_details_screen.dart';
+import 'package:flutudemy/pages/tab_screen.dart';
 
 void main(List<String> args) {
   // main function
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         // mengatur index route
-        '/': (context) => const KategoriScreen(),
+        '/': (context) => const TabScreen(),
         // membuat named routes
         CategoryMealsScreen.routeName: (context) => const CategoryMealsScreen(),
         MealDetaialsScreen.routeName: (context) => const MealDetaialsScreen(),
