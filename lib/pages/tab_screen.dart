@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutudemy/pages/category_meals_pages.dart';
 import 'package:flutudemy/pages/category_pages.dart';
 import 'package:flutudemy/pages/fav_screen.dart';
 
@@ -11,31 +10,52 @@ class TabScreen extends StatefulWidget {
 }
 
 class _TabScreenState extends State<TabScreen> {
+  final List<Widget> _pages = const [
+    KategoriScreen(),
+    FavoriteScreen(),
+  ];
+
+  int _selectedPagesIndex = 0;
+
+  String titleText(int index) {
+    if (index == 0) {
+      return "Kategori Screen";
+    } else {
+      return "Favorit Screen";
+    }
+  }
+
+  void _selectPage(int index) {
+    setState(() {
+      _selectedPagesIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      // initialIndex: 0,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text("Makanan"),
-          bottom: const TabBar(
-            tabs: [
-              Tab(
-                icon: Icon(Icons.category),
-                text: "Kategori",
-              ),
-              Tab(
-                icon: Icon(Icons.star),
-                text: "Favorit",
-              )
-            ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(titleText(_selectedPagesIndex).toString()),
+      ),
+      body: _pages[_selectedPagesIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: _selectPage,
+        backgroundColor: Theme.of(context).primaryColor,
+        currentIndex: _selectedPagesIndex,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.black54,
+        type: BottomNavigationBarType.shifting,
+        items: const [
+          BottomNavigationBarItem(
+              backgroundColor: Colors.blue,
+              icon: Icon(Icons.category),
+              label: "Kategori"),
+          BottomNavigationBarItem(
+            backgroundColor: Colors.blue,
+            icon: Icon(Icons.star),
+            label: "Favorit",
           ),
-        ),
-        body: const TabBarView(children: [
-          KategoriScreen(),
-          FavoriteScreen(),
-        ]),
+        ],
       ),
     );
   }
